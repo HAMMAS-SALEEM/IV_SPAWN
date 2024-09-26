@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Anton";
+  src: url(./assets/Anton.ttf);
+}
+
+@font-face {
+  font-family: "Pricedown";
+  src: url(./assets/pricedown.otf);
+}
+
+body{
+  background-color: rgb(109, 109, 109);
+}
+
+.option-wrapper{
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+
+.option-header{
+  color: white;
+  font-family: Anton;
+  font-size: 40px;
+}
+
+.option-container{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow:scroll;
+
+}
+
+.option-container::-webkit-scrollbar{
+  display: none;
+}
+
+.option{
+  color: white;
+  font-family: Anton;
+  font-size: 30px;
+}
+
+.arrow{
+  color: white;
+  font-family: Anton;
+  font-size: 30px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+}
+
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-family: Anton;
+  color: white;
+}
+
+.button-key{
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid white;
+  border-radius: 7px;
+  padding: 0px 7px;
+}
