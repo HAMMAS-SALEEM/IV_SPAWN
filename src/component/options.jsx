@@ -38,10 +38,10 @@ const option = () => {
             &lt;
           </button>
 
-          <div className='flex justify-center items-cente w-[450px]'>
+          <div className='w-[450px]'>
             <ul
-              style={{width: tableCount, transform: `translateX(${150*counter}px)`, transition: 'all ease-in-out 250ms'}} 
-              className={`flex justify-center items-center ml-[80px]`}>
+              style={{width: tableCount, transform: `translateX(${(150*counter)}px)`, transition: 'all ease-in-out 250ms'}} 
+              className={`flex justify-center items-center gap-2`}>
               {table.map((c, i) => (
                 <li key={c + i} className='w-[150px] text-white text-xl text-center'>
                   {c.name}
