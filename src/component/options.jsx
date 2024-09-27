@@ -2,23 +2,26 @@ import { React, useEffect, useState } from 'react'
 import { table } from './tables'
 const option = () => {
   const [visible, setvisible] = useState(true)
-  const [options, setoptions] = useState([])
   const [counter, setcounter] = useState(0)
 
   const tableCount = table.length * 150
 
-  const incCount = () =>
-    setcounter(prev => {
-      console.log(prev + 1)
-      return prev + 1
-    })
-  const decCount = () =>
-    setcounter(prev => {
-      console.log(Math.abs(prev - 1), table.length - 2)
-      return prev - 1
-    })
+  const incCount = () => setcounter(prev => prev + 1)
+  const decCount = () => setcounter(prev => prev - 1)
 
-  useEffect(() => {
+  const setLoc = () => {
+    let name = 0;
+    if(counter == 1) {
+      name = 0
+    } else if (counter == 0) {
+      name = 1
+    } else {
+      name = (counter*-1)+1
+    }
+    console.log(table[name].name)
+  }
+
+    useEffect(() => {
     const handlekey = e => {
       if (visible) {
         if (e.keyCode === 39 && counter < table.length - 1) {
@@ -83,7 +86,7 @@ const option = () => {
 
       <div className='buttons'>
         <div className='button'>
-          <div className='button-key'>ENTER</div>
+          <button type='button' onClick={setLoc} className='button-key'>ENTER</button>
           <span className='button-action'>Confirm</span>
         </div>
 
