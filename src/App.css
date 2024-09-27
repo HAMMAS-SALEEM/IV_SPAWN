@@ -12,6 +12,10 @@ body{
   background-color: rgb(109, 109, 109);
 }
 
+li {
+  list-style: none;
+}
+
 .option-wrapper{
   position: absolute;
   bottom: 10px;

@@ -5,7 +5,7 @@ const option = () => {
   const [options, setoptions] = useState([])
   const [counter, setcounter] = useState(0)
 
-  const tableCount = table.length*150
+  const tableCount = table.length * 150
 
   const incCount = () => {
     console.log('working')
@@ -39,11 +39,20 @@ const option = () => {
           </button>
 
           <div className='w-[450px]'>
+          <li className='w-[150px] h-[56px] bg-yellow-500 absolute left-[168px] rounded' />
             <ul
-              style={{width: tableCount, transform: `translateX(${(150*counter)}px)`, transition: 'all ease-in-out 250ms'}} 
-              className={`flex justify-center items-center gap-2`}>
+              style={{
+                width: tableCount,
+                transform: `translateX(${150 * counter}px)`,
+                transition: 'all ease-in-out 250ms'
+              }}
+              className={`flex justify-center items-center gap-2`}
+            >
               {table.map((c, i) => (
-                <li key={c + i} className='w-[150px] text-white text-xl text-center'>
+                <li
+                  key={c + i}
+                  className={`w-[150px] text-white text-xl text-center z-10`}
+                >
                   {c.name}
                 </li>
               ))}
