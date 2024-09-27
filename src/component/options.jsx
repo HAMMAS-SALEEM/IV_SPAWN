@@ -40,16 +40,15 @@ const option = () => {
         <div className='option-container'>
           <button
             type='button'
-            className='arrow z-10'
+            className='arrow z-10 bg-black w-[50px] rounded-[50%] border'
             onClick={decCount}
             disabled={table.length - 2 === Math.abs(counter) && true}
           >
-            &lt;
+            Q
           </button>
-
           <div className='w-[450px]'>
             <li
-              style={{ left: '168px' }}
+              style={{ left: '208px' }}
               className={`w-[150px] h-[56px] bg-yellow-500 absolute rounded`}
             />
             <ul
@@ -73,11 +72,11 @@ const option = () => {
 
           <button
             type='button'
-            className='arrow z-10'
+            className='arrow z-10 bg-black w-[50px] rounded-[50%] border'
             onClick={incCount}
             disabled={counter === 1 && true}
           >
-            &gt;
+            E
           </button>
         </div>
       </div>
@@ -98,6 +97,3 @@ const option = () => {
 }
 
 export default option
-
-// Get length of first name
-// On pressing right move the whole part by length of first name
