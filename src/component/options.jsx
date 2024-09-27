@@ -7,14 +7,16 @@ const option = () => {
 
   const tableCount = table.length * 150
 
-  const incCount = () => setcounter(prev => {
-    console.log(prev + 1)
-    return prev + 1
-  })
-  const decCount = () => setcounter(prev => {
-    console.log(prev - 1)
-    return prev - 1
-  })
+  const incCount = () =>
+    setcounter(prev => {
+      console.log(prev + 1)
+      return prev + 1
+    })
+  const decCount = () =>
+    setcounter(prev => {
+      console.log(Math.abs(prev - 1), table.length - 2)
+      return prev - 1
+    })
 
   useEffect(() => {
     const handlekey = e => {
@@ -36,16 +38,24 @@ const option = () => {
       <div className='option-wrapper'>
         <div className='option-header'>CHOOOSE YOUR LOCATION</div>
         <div className='option-container'>
-          <button type='button' className='arrow z-10' onClick={decCount}>
+          <button
+            type='button'
+            className='arrow z-10'
+            onClick={decCount}
+            disabled={table.length - 2 === Math.abs(counter) && true}
+          >
             &lt;
           </button>
 
           <div className='w-[450px]'>
-          <li className={`w-[150px] h-[56px] bg-yellow-500 absolute left-[${168}px] rounded`} />
+            <li
+              style={{ left: '168px' }}
+              className={`w-[150px] h-[56px] bg-yellow-500 absolute rounded`}
+            />
             <ul
               style={{
                 width: tableCount,
-                transform: `translateX(${150 * counter}px)`,
+                transform: `translateX(${150 * counter + counter * 0.3}px)`,
                 transition: 'all ease-in-out 250ms'
               }}
               className={`flex justify-center items-center gap-2`}
@@ -61,7 +71,12 @@ const option = () => {
             </ul>
           </div>
 
-          <button type='button' className='arrow z-10' onClick={incCount}>
+          <button
+            type='button'
+            className='arrow z-10'
+            onClick={incCount}
+            disabled={counter === 1 && true}
+          >
             &gt;
           </button>
         </div>
