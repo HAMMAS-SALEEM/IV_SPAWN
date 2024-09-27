@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react'
 import { table } from './tables'
 const option = () => {
   const [visible, setvisible] = useState(true)
+  const [location, setLocation] = useState('')
   const [counter, setcounter] = useState(0)
 
   const tableCount = table.length * 150
@@ -18,6 +19,7 @@ const option = () => {
     } else {
       name = (counter*-1)+1
     }
+    setLocation(table[name].name)
     console.log(table[name].name)
   }
 
@@ -43,7 +45,7 @@ const option = () => {
         <div className='option-container'>
           <button
             type='button'
-            className='arrow z-10 bg-black w-[50px] rounded-[50%] border'
+            className={`arrow z-10 bg-black ${table.length - 2 === Math.abs(counter) && 'bg-gray-500'} w-[50px] rounded-[50%] border`}
             onClick={decCount}
             disabled={table.length - 2 === Math.abs(counter) && true}
           >
@@ -75,7 +77,7 @@ const option = () => {
 
           <button
             type='button'
-            className='arrow z-10 bg-black w-[50px] rounded-[50%] border'
+            className={`arrow z-10 bg-black ${counter === 1 && 'bg-gray-500'} w-[50px] rounded-[50%] border`}
             onClick={incCount}
             disabled={counter === 1 && true}
           >
