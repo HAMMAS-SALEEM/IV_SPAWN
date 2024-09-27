@@ -7,12 +7,14 @@ const option = () => {
 
   const tableCount = table.length * 150
 
-  const incCount = () => {
-    console.log('working')
-    setcounter(prev => prev + 1)
-    console.log(counter)
-  }
-  const decCount = () => setcounter(prev => prev - 1)
+  const incCount = () => setcounter(prev => {
+    console.log(prev + 1)
+    return prev + 1
+  })
+  const decCount = () => setcounter(prev => {
+    console.log(prev - 1)
+    return prev - 1
+  })
 
   useEffect(() => {
     const handlekey = e => {
@@ -39,7 +41,7 @@ const option = () => {
           </button>
 
           <div className='w-[450px]'>
-          <li className='w-[150px] h-[56px] bg-yellow-500 absolute left-[168px] rounded' />
+          <li className={`w-[150px] h-[56px] bg-yellow-500 absolute left-[${168}px] rounded`} />
             <ul
               style={{
                 width: tableCount,
@@ -51,7 +53,7 @@ const option = () => {
               {table.map((c, i) => (
                 <li
                   key={c + i}
-                  className={`w-[150px] text-white text-xl text-center z-10`}
+                  className={`w-full text-white text-lg text-center z-10`}
                 >
                   {c.name}
                 </li>
